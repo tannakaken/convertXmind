@@ -1,0 +1,4 @@
+package: github.com/tannakaken/convertXmind
+import:
+- package: github.com/tealeg/xlsx
+  version: ^1.0.3
