@@ -7,7 +7,17 @@ import (
 
 // xmindファイルをコマンドライン引数で指定されたファイル形式に変換する
 func main() {
-  usage := "Usage: convertXmind [xlsx|org] source dist\n"
+  usage :=
+`USAGE: convertXmind format source dist
+DESCRIPTION:
+  convert XMind 8 file to given format.
+
+VERSION: 1.0
+
+FORMATS:
+  xlsx  xlsx file for Microsoft Excel
+  org   org file for Gnu Emacs
+`
   if len(os.Args) > 2 &&
      (os.Args[1] == "-h" ||
       os.Args[1] == "h" ||
