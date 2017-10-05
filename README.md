@@ -56,6 +56,8 @@ formatはxlsx（Microdoft Excelファイル）と
 org（GNU Emacsのorg-mode用ファイル）が選べます。
 
 sourceに変換したいXMindファイルを、distに変換後の名前をコマンドします。
+もしdistを指定しない場合、sourceの拡張子を指定したフォーマットに変更したものが、
+生成されたファイルの名前になります。
 
 ## 動作環境
 
