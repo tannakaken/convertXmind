@@ -16,6 +16,6 @@ func TestGetContent(t *testing.T) {
 		t.Fatal(err)
 	}
 	if !bytes.Equal(actual, expected) {
-		t.Fatal("got %s\nwant %s", actual, expected)
+		t.Fatal("want %s\ngot %s", expected, actual)
 	}
 }

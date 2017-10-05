@@ -38,7 +38,7 @@ func TestMakeXlsx(t *testing.T) {
 			for k, actualCell := range actualRow.Cells {
 				expectedCell := expectedRow.Cells[k]
 				if actualCell.String() != expectedCell.String() {
-					t.Errorf("got %v\nwant %v", actualCell, expectedCell)
+					t.Errorf("want %v\ngot %v", expectedCell, actualCell)
 				}
 			}
 		}

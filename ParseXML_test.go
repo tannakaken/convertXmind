@@ -22,6 +22,6 @@ func TestParseXML(t *testing.T) {
 		t.Fatal(err)
 	}
 	if !bytes.Equal(actual, expected) {
-		t.Fatal("got %v\nwant %v", actual, expected)
+		t.Fatal("want %v\ngot %v", expected, actual)
 	}
 }
