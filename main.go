@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
-	"path"
+	"path/filepath"
 )
 
 // xmindファイルをコマンドライン引数で指定されたファイル形式に変換する
@@ -38,7 +38,7 @@ FORMATS:
 	if len(os.Args) == 4 {
 		dist = os.Args[3]
 	} else {
-		dist = path.Base(source[:len(source)-len(path.Ext(source))]) +
+		dist = filepath.Base(source[:len(source)-len(filepath.Ext(source))]) +
 			"." + fileType
 	}
 	topic := ParseXML(GetContent(source))
