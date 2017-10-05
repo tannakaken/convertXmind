@@ -11,7 +11,7 @@ func TestMakeOrg(t *testing.T) {
 	tmp := "./test_data/tmp"
 	xml, err := ioutil.ReadFile("./test_data/test.xml")
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Fatal(err)
 	}
 	data, err := ParseXML(xml)
 	if err != nil {
@@ -24,13 +24,13 @@ func TestMakeOrg(t *testing.T) {
 	defer os.Remove(tmp)
 	actual, err := ioutil.ReadFile(tmp)
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Fatal(err)
 	}
 	expected, err := ioutil.ReadFile("./test_data/test.org")
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Fatal(err)
 	}
 	if !bytes.Equal(actual, expected) {
-		t.Errorf("got %s\nwant %s", actual, expected)
+		t.Fatal("got %s\nwant %s", actual, expected)
 	}
 }

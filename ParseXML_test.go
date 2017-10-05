@@ -10,7 +10,7 @@ import (
 func TestParseXML(t *testing.T) {
 	xml, err := ioutil.ReadFile("./test_data/test.xml")
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
 	}
 	topic, err := ParseXML(xml)
 	if err != nil {
@@ -19,9 +19,9 @@ func TestParseXML(t *testing.T) {
 	actual := []byte(fmt.Sprint(*topic))
 	expected, err := ioutil.ReadFile("./test_data/test.txt")
 	if err != nil {
-		t.Error(err)
+		t.Fatal(err)
 	}
 	if !bytes.Equal(actual, expected) {
-		t.Errorf("got %v\nwant %v", actual, expected)
+		t.Fatal("got %v\nwant %v", actual, expected)
 	}
 }

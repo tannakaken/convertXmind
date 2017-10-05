@@ -13,9 +13,9 @@ func TestGetContent(t *testing.T) {
 	}
 	expected, err := ioutil.ReadFile("./test_data/test.xml")
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Fatal(err.Error())
 	}
 	if !bytes.Equal(actual, expected) {
-		t.Errorf("got %s\nwant %s", actual, expected)
+		t.Fatal("got %s\nwant %s", actual, expected)
 	}
 }
