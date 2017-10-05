@@ -62,13 +62,13 @@ sourceに変換したいXMindファイルを、distに変換後の名前をコ�
 もしdistを指定しない場合、sourceの拡張子を指定したフォーマットに変更したものが、
 生成されたファイルの名前になります。
 
-## 動作例
+## スクリーショット
 
-![Xmindによるイメージマップ例](https://raw.githubusercontent.com/tannakaken/convertXmind/image/xmind_example.png "XMindによるマインドマップ例")
+![Xmindによるイメージマップ例](https://raw.githubusercontent.com/tannakaken/convertXmind/blob/master/image/xmind_example.png "XMindによるマインドマップ例")
 
-![Excelへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/image/excel_example.png "Excelへの変換例")
+![Excelへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/blob/master/image/excel_example.png "Excelへの変換例")
 
-![orgファイルへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/image/org_example.png "Orgファイルへの変換例")
+![orgファイルへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/blob/master/image/org_example.png "Orgファイルへの変換例")
 
 ## 動作環境
 
