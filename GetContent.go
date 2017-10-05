@@ -17,6 +17,7 @@ func GetContent(src string) ([]byte, error) {
 	for _, f := range r.File {
 		if f.Name == "content.xml" {
 			content = f
+			break
 		}
 	}
 	if content == nil {
