@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"log"
 	"os"
 	"path/filepath"
 )
@@ -41,14 +42,24 @@ FORMATS:
 		dist = filepath.Base(source[:len(source)-len(filepath.Ext(source))]) +
 			"." + fileType
 	}
-	topic := ParseXML(GetContent(source))
+	content, err := GetContent(source)
+	if err != nil {
+		log.Fatal(err)
+	}
+	topic, err := ParseXML(content)
+	if err != nil {
+		log.Fatal(err)
+	}
 	switch fileType {
 	case "xlsx":
-		MakeXlsx(topic, dist)
+		err = MakeXlsx(topic, dist)
 	case "org":
-		MakeOrg(topic, dist)
+		err = MakeOrg(topic, dist)
 	default:
 		fmt.Fprint(os.Stderr, usage)
 		os.Exit(1)
+	}
+	if err != nil {
+		log.Fatal(err)
 	}
 }

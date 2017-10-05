@@ -1,7 +1,6 @@
 package main
 
 import (
-	"log"
 	"os"
 )
 
@@ -18,11 +17,12 @@ func makeOrg(file *os.File, topic Topic, level int) {
 }
 
 // topic構造体を再帰的にgnu emcasのorgファイルにして出力する。
-func MakeOrg(topic Topic, dist string) {
+func MakeOrg(topic Topic, dist string) error {
 	file, err := os.Create(dist)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	defer file.Close()
 	makeOrg(file, topic, 1)
+	return nil
 }

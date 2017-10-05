@@ -3,14 +3,13 @@ package main
 import (
 	"archive/zip"
 	"io"
-	"log"
 )
 
 // xmindファイルからcontent.xmlを取り出す。
-func GetContent(src string) []byte {
+func GetContent(src string) ([]byte, error) {
 	r, err := zip.OpenReader(src)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 	defer r.Close()
 
@@ -21,17 +20,17 @@ func GetContent(src string) []byte {
 		}
 	}
 	if content == nil {
-		log.Fatal("content not found")
+		return nil, err
 	}
 	rc, err := content.Open()
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
 	defer rc.Close()
 	buf := make([]byte, content.UncompressedSize)
 	_, err = io.ReadFull(rc, buf)
 	if err != nil {
-		log.Fatal(err)
+		return nil, err
 	}
-	return buf
+	return buf, nil
 }

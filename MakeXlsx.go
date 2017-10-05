@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/tealeg/xlsx"
-	"log"
 )
 
 func makeXlsx(topic Topic, sheet *xlsx.Sheet, level int, row *int, index int) {
@@ -15,11 +14,11 @@ func makeXlsx(topic Topic, sheet *xlsx.Sheet, level int, row *int, index int) {
 }
 
 // Topic構造体を再帰的にxlsxファイルにして出力する。
-func MakeXlsx(topic Topic, dist string) {
+func MakeXlsx(topic Topic, dist string) error {
 	file := xlsx.NewFile()
 	sheet, err := file.AddSheet("Sheet1")
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
 	row := 2
 	sheet.Cell(1, 1).Value = topic.Title
@@ -28,6 +27,7 @@ func MakeXlsx(topic Topic, dist string) {
 	}
 	err = file.Save(dist)
 	if err != nil {
-		log.Fatal(err)
+		return err
 	}
+	return nil
 }
