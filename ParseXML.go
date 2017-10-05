@@ -1,28 +1,27 @@
 package main
 
 import (
-  "encoding/xml"
+	"encoding/xml"
 )
 
 type Content struct {
-  Sheet struct {
-    Topic Topic `xml:"topic"`
-  } `xml:"sheet"`
+	Sheet struct {
+		Topic Topic `xml:"topic"`
+	} `xml:"sheet"`
 }
 
 type Topic struct {
-  Title string `xml:"title"`
-  Children struct {
-    Topics struct {
-      Topic []Topic `xml:"topic"`
-    } `xml:"topics"`
-  } `xml:"children"`
+	Title    string `xml:"title"`
+	Children struct {
+		Topics struct {
+			Topic []Topic `xml:"topic"`
+		} `xml:"topics"`
+	} `xml:"children"`
 }
 
 // xmindファイルから取り出したcontent.xmlを構造体にし、一番上のレベルのtopicを取り出す。
 func ParseXML(xmlData []byte) Topic {
-  t := Content{}
-  xml.Unmarshal(xmlData, &t)
-  return t.Sheet.Topic
+	t := Content{}
+	xml.Unmarshal(xmlData, &t)
+	return t.Sheet.Topic
 }
-
