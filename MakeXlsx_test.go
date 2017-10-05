@@ -1,10 +1,11 @@
 package main
 
 import (
-	"github.com/tealeg/xlsx"
 	"io/ioutil"
 	"os"
 	"testing"
+
+	"github.com/tealeg/xlsx"
 )
 
 func TestMakeXlsx(t *testing.T) {
@@ -13,7 +14,10 @@ func TestMakeXlsx(t *testing.T) {
 	if err != nil {
 		t.Errorf(err.Error())
 	}
-	data := ParseXML(xml)
+	data, err := ParseXML(xml)
+	if err != nil {
+		t.Fatal(err)
+	}
 	MakeXlsx(data, tmp)
 	defer os.Remove(tmp)
 	actual, err := xlsx.OpenFile(tmp)

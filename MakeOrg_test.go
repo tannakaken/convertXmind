@@ -13,7 +13,10 @@ func TestMakeOrg(t *testing.T) {
 	if err != nil {
 		t.Errorf(err.Error())
 	}
-	data := ParseXML(xml)
+	data, err := ParseXML(xml)
+	if err != nil {
+		t.Fatal(err)
+	}
 	MakeOrg(data, tmp)
 	defer os.Remove(tmp)
 	actual, err := ioutil.ReadFile(tmp)

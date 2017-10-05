@@ -7,7 +7,10 @@ import (
 )
 
 func TestGetContent(t *testing.T) {
-	actual := GetContent("./test_data/test.xmind")
+	actual, err := GetContent("./test_data/test.xmind")
+	if err != nil {
+		t.Fatal(err)
+	}
 	expected, err := ioutil.ReadFile("./test_data/test.xml")
 	if err != nil {
 		t.Errorf(err.Error())
