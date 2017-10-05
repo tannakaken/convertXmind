@@ -25,9 +25,5 @@ func MakeXlsx(topic *Topic, dist string) error {
 	for index, childTopic := range topic.Children.Topics.Topic {
 		makeXlsx(&childTopic, sheet, 1, &row, index)
 	}
-	err = file.Save(dist)
-	if err != nil {
-		return err
-	}
-	return nil
+	return file.Save(dist)
 }
