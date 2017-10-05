@@ -12,7 +12,7 @@ func TestMakeXlsx(t *testing.T) {
 	tmp := "./test_data/tmp.xlsx"
 	xml, err := ioutil.ReadFile("./test_data/test.xml")
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Error(err)
 	}
 	data, err := ParseXML(xml)
 	if err != nil {
@@ -22,11 +22,11 @@ func TestMakeXlsx(t *testing.T) {
 	defer os.Remove(tmp)
 	actual, err := xlsx.OpenFile(tmp)
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Error(err)
 	}
 	expected, err := xlsx.OpenFile("./test_data/test.xlsx")
 	if err != nil {
-		t.Errorf(err.Error())
+		t.Error(err)
 	}
 	for i, actualSheet := range actual.Sheets {
 		expectedSheet := expected.Sheets[i]
@@ -35,8 +35,7 @@ func TestMakeXlsx(t *testing.T) {
 			for k, actualCell := range actualRow.Cells {
 				expectedCell := expectedRow.Cells[k]
 				if actualCell.String() != expectedCell.String() {
-					t.Errorf("got %s\nwant %s", actualCell.String(),
-						expectedCell.String())
+					t.Errorf("got %v\nwant %v", actualCell, expectedCell)
 				}
 			}
 		}
