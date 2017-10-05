@@ -17,6 +17,7 @@ func makeOrg(file *os.File ,topic Topic, level int) {
   }
 }
 
+// topic構造体を再帰的にgnu emcasのorgファイルにして出力する。
 func MakeOrg(topic Topic,dist string) {
   file, err := os.Create(dist)
   if err != nil {

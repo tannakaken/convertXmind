@@ -5,7 +5,7 @@ import (
   "fmt"
 )
 
-
+// xmindファイルをコマンドライン引数で指定されたファイル形式に変換する
 func main() {
   usage := "Usage: convertXmind [xlsx|org] source dist\n"
   if len(os.Args) > 2 &&

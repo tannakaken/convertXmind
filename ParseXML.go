@@ -19,6 +19,7 @@ type Topic struct {
   } `xml:"children"`
 }
 
+// xmindファイルから取り出したcontent.xmlを構造体にし、一番上のレベルのtopicを取り出す。
 func ParseXML(xmlData []byte) Topic {
   t := Content{}
   xml.Unmarshal(xmlData, &t)

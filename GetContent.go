@@ -6,6 +6,7 @@ import (
   "log"
 )
 
+// xmindファイルからcontent.xmlを取り出す。
 func GetContent(src string) []byte {
   r, err := zip.OpenReader(src)
   if err != nil {
