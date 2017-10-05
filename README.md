@@ -36,6 +36,12 @@ macでアイディア出しにxmindのフリー版を使ってて、それを上
 というわけで、goの練習問題としてパパッと作って見たのが、これというわけです。
 予想以上に簡単で驚きましたが。
 
+インストール方法はgolangがインストールされている状態で
+
+    go get github.com/tannakaken/convertXmind
+
+とコマンドするだけです。
+
 使い方は
 
     convertXmind format source dist
