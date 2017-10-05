@@ -64,11 +64,11 @@ sourceに変換したいXMindファイルを、distに変換後の名前をコ�
 
 ## スクリーショット
 
-![Xmindによるイメージマップ例](https://raw.githubusercontent.com/tannakaken/convertXmind/blob/master/image/xmind_example.png "XMindによるマインドマップ例")
+![Xmindによるイメージマップ例](https://raw.githubusercontent.com/tannakaken/convertXmind/master/image/xmind_example.png "XMindによるマインドマップ例")
 
-![Excelへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/blob/master/image/excel_example.png "Excelへの変換例")
+![Excelへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/master/image/excel_example.png "Excelへの変換例")
 
-![orgファイルへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/blob/master/image/org_example.png "Orgファイルへの変換例")
+![orgファイルへの変換例](https://raw.githubusercontent.com/tannakaken/convertXmind/master/image/org_example.png "Orgファイルへの変換例")
 
 ## 動作環境
 
