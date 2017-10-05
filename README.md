@@ -36,18 +36,28 @@ macでアイディア出しにxmindのフリー版を使ってて、それを上
 というわけで、goの練習問題としてパパッと作って見たのが、これというわけです。
 予想以上に簡単で驚きましたが。
 
-インストール方法はgolangがインストールされている状態で
+## インストール方法
+
+golangがインストールされている状態で
 
     go get github.com/tannakaken/convertXmind
 
 とコマンドするだけです。
 
-使い方は
+## 使い方
+
+インストール後
 
     convertXmind format source dist
 
-でformatはxlsx（Microdoft Excelファイル）と
+とコマンドします。
+
+formatはxlsx（Microdoft Excelファイル）と
 org（GNU Emacsのorg-mode用ファイル）が選べます。
+
+sourceに変換したいXMindファイルを、distに変換後の名前をコマンドします。
+
+## 動作環境
 
 動作確認した環境は
 
