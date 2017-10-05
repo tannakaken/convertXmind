@@ -18,7 +18,10 @@ func TestMakeXlsx(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	MakeXlsx(data, tmp)
+	err = MakeXlsx(data, tmp)
+	if err != nil {
+		t.Fatal(err)
+	}
 	defer os.Remove(tmp)
 	actual, err := xlsx.OpenFile(tmp)
 	if err != nil {

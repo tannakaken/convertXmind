@@ -17,7 +17,10 @@ func TestMakeOrg(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	MakeOrg(data, tmp)
+	err = MakeOrg(data, tmp)
+	if err != nil {
+		t.Fatal(err)
+	}
 	defer os.Remove(tmp)
 	actual, err := ioutil.ReadFile(tmp)
 	if err != nil {
