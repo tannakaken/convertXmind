@@ -16,7 +16,7 @@ func TestParseXML(t *testing.T) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	actual := []byte(fmt.Sprint(topic))
+	actual := []byte(fmt.Sprint(*topic))
 	expected, err := ioutil.ReadFile("./test_data/test.txt")
 	if err != nil {
 		t.Errorf(err.Error())
